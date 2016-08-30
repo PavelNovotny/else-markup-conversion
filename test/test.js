@@ -4,6 +4,8 @@
  */
 
 var convert = require("../lib/index.js");
+var fs = require("fs");
 
-convert.searchCustomers("Joe Pavel");
+var customerTemplate = fs.readFileSync('./test/customerTemplate.json', 'utf8');
+convert.searchQuery("Joe Pavel", customerTemplate);
 
