@@ -2,7 +2,7 @@
   "query": {
     "bool": {
       "must": [
-        {{#searchStrings}}
+        {{#general.searchStrings}}
         {
           "query_string": {
             "query": "*{{searchString}}*",
@@ -18,7 +18,7 @@
             ]
           }
         },
-        {{/searchStrings}}
+        {{/general.searchStrings}}
         {}
       ]
     }
