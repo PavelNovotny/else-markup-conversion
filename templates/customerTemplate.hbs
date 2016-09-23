@@ -4,23 +4,253 @@
       "must": [
         {{#general.searchStrings}}
         {
-          "query_string": {
-            "query": "*{{searchString}}*",
-            "fields": [
-              "firstName",
-              "lastName",
-              "companyName",
-              "address.street",
-              "address.city",
-              "address.zip",
-              "birthNumber",
-              "ico"
+          "bool": {
+            "should": [
+              {
+                "query_string": {
+                  "query": "{{searchString}}",
+                  //zde hledam na customerovi
+                  "fields": [
+                    "firstName",//jméno zákazníka
+                    "lastName",//název zákazníka/příjmení zákazníka
+                    "companyName",
+                    "identityDocumentID",//číslo pasu,číslo občanského průkazu
+                    "companyRegNo",//IČ
+                    "taxRegNo", //DIČ
+                    "birthNumber",//Rodné číslo
+                    "birthDateString",
+                    "sfaId", //SFA ID zákazníka
+                    "residentalAddress.street", //adresa zákazníka - sídlo
+                    "residentalAddress.streetNo",
+                    "residentalAddress.buildingNo",
+                    "residentalAddress.city",
+                    "obligationRefNo"//číslo RD
+                  ]
+                }
+              },
+              {
+                "has_child": {
+                  "type": "product",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "serviceId",//ID služby/přípojky
+                              "imsi",//IMSI
+                              "phoneNumber",//SIM
+                              "serialNumber",//ESN
+                              "birthNumber",
+                              "sfaId",
+                              "residentalAddress.street",
+                              "residentalAddress.streetNo",
+                              "residentalAddress.buildingNo",
+                              "residentalAddress.city"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "*": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "customer_permission",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "*",
+                            "fields": [
+                              "crRefNo"//ID PZ
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "crRefNo": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "customer_request",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "crRefNo"//ID PZ
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "crRefNo": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "order",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "orderRefNo"//ID objednávky
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "orderRefNo": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "payment_document",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "variableSymbol"//číslo platebního dokladu
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "variableSymbol": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              }
             ]
           }
         },
         {{/general.searchStrings}}
         {}
+      ],
+      //filtrovani na opravneni
+      "filter":[
+        {
+          "has_child": {
+            "type": "customer_permission",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "query_string": {
+                      "query": "{{general.login_external}}",
+                      "fields": [
+                        "login"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
       ]
+    }
+  },
+  "highlight": {
+    "fields": {
+      "*": {
+        "highlight_query": {
+          "bool": {
+            "should": [
+              {{#general.searchStrings}}
+              {
+                "query_string": {
+                  "query": "{{searchString}}",
+                  //zde hledam na customerovi
+                  "fields": [
+                    "firstName",//jméno zákazníka
+                    "lastName",//název zákazníka/příjmení zákazníka
+                    "companyName",
+                    "identityDocumentID",//číslo pasu,číslo občanského průkazu
+                    "companyRegNo",//IČ
+                    "taxRegNo", //DIČ
+                    "birthNumber",//Rodné číslo
+                    "sfaId", //SFA ID zákazníka
+                    "residentalAddress.street", //adresa zákazníka - sídlo
+                    "residentalAddress.streetNo",
+                    "residentalAddress.buildingNo",
+                    "residentalAddress.city",
+                    "obligationRefNo"//číslo RD
+                  ]
+                }
+              },
+              {{/general.searchStrings}}
+              {}
+            ]
+          }
+        }
+      }
     }
   }
 }

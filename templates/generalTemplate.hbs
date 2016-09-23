@@ -1,0 +1,183 @@
+{
+  "query": {
+    "bool": {
+      "must": [ //AND podminka pro všechny slova
+       {{#general.searchStrings}}
+        {
+          "bool": {
+            "should": [  //OR podminka pro prvni slovo ve vsech typech
+              {
+                "query_string": { //hlavní entita
+                  "query": "{{searchString}}",
+                  "fields": [
+                    "field1"
+                  ]
+                }
+              },
+              {
+                "nested": {
+                  "path": "nestedObject",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "nestedObject.field1"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "childObject",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "childField1"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "highlight": {
+                      "fields": {
+                        "*": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "should": [   //OR podminka pro druhe slovo ve vsech typech
+              {
+                "query_string": { //hlavní entita
+                  "query": "{{searchString}}",
+                  "fields": [
+                    "field1"
+                  ]
+                }
+              },
+              {
+                "nested": {
+                  "path": "nestedObject",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "nestedObject.field1"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "has_child": {
+                  "type": "childObject",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "{{searchString}}",
+                            "fields": [
+                              "childField1"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "name" : "unique_name_for_highlight",
+                    "highlight": {
+                      "fields": {
+                        "*": {
+                          "number_of_fragments": 3
+                        }
+                      }
+                    },
+                    "from": 0,
+                    "size": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {{/general.searchStrings}}
+        {}
+      ],
+      "filter":[  //filter na opravneni
+        {
+          "has_parent": { //popripade has_child, podle designu
+            "type": "ENTITA_permission",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "query_string": {
+                      "query": "{{general.login_external}}",
+                      "fields": [
+                        "login"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "highlight": { //highlight
+    "fields": {
+      "*": {
+        "highlight_query": { //highlight na hlavní entitě, flat a nested objektech
+          "bool": {
+            "should": [
+             {{#general.searchStrings}}
+              {
+                  "query": "{{searchString}}",
+                  "fields": [
+                    "field1",
+                    "nestedObject.field1"
+                  ]
+                }
+              },
+             {{/general.searchStrings}}
+              {}
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+
