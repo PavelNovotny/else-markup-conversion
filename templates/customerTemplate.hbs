@@ -55,39 +55,10 @@
                     }
                   },
                   "inner_hits": {
+                    "name": "product_{{searchString}}",
                     "highlight": {
                       "fields": {
                         "*": {
-                          "number_of_fragments": 3
-                        }
-                      }
-                    },
-                    "from": 0,
-                    "size": 1
-                  }
-                }
-              },
-              {
-                "has_child": {
-                  "type": "customer_permission",
-                  "query": {
-                    "bool": {
-                      "must": [
-                        {
-                          "query_string": {
-                            "query": "*",
-                            "fields": [
-                              "crRefNo"//ID PZ
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  "inner_hits": {
-                    "highlight": {
-                      "fields": {
-                        "crRefNo": {
                           "number_of_fragments": 3
                         }
                       }
@@ -115,6 +86,7 @@
                     }
                   },
                   "inner_hits": {
+                    "name": "customer_request_{{searchString}}",
                     "highlight": {
                       "fields": {
                         "crRefNo": {
@@ -145,6 +117,7 @@
                     }
                   },
                   "inner_hits": {
+                    "name": "order_{{searchString}}",
                     "highlight": {
                       "fields": {
                         "orderRefNo": {
@@ -175,6 +148,7 @@
                     }
                   },
                   "inner_hits": {
+                    "name": "payment_document_{{searchString}}",
                     "highlight": {
                       "fields": {
                         "variableSymbol": {

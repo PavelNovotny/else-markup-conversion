@@ -11,13 +11,13 @@ var data = {
     "general":{
         "gui":"4-3-1",
         //alespon jeden z nasledujicich loginu je povinny
-        "login_external":"x0503899",
+        "login_external":"x0503569",
         "login_internal":"ra123456",
         //default je 1, kdyz nebude poslano
         "page":"1",
         //default je 10, kdyz nebude poslano
         "size":"10",
-        "searchStrings": ["Praha", "Novák"],
+        "searchStrings": ["7202504289", "4149873031", "5115564647"],
         //default je false
         "show_inactive":true
     },
