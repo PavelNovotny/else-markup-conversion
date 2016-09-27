@@ -1,4 +1,4 @@
-# Konverze dotazů pomocí templatovacího jazyka, (Mustache). 
+# Konverze dotazů pomocí templatovacího jazyka (Mustache). 
 
 ## Data pro šablony
 ```
