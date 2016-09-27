@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/PavelNovotny/else-markup-conversion#readme",
   "dependencies": {
-    "mustache": "^2.2.1"
+    "mustache": "^2.2.1",
+    "nconf": "^0.8.4",
+    "request": "^2.75.0"
   }
 }

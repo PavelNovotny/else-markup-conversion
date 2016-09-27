@@ -1,0 +1,91 @@
+{
+  "took" : 28,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 4,
+    "successful" : 4,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 0.014902956,
+    "hits" : [ {
+      "_index" : "customer_index_rif",
+      "_type" : "customer",
+      "_id" : "CUST_5_499",
+      "_score" : 0.014902956,
+      "_source" : {
+        "residentalAddress" : {
+          "buildingNo" : "318165",
+          "city" : "NováVčelnice",
+          "cityDistrict" : "Domašov",
+          "countryCode" : "PL",
+          "crossId" : "dan.dobiášová@corerobotics.me",
+          "postalCode" : "96991",
+          "street" : "ODBOJE",
+          "streetNo" : "885269"
+        },
+        "frameContract" : {
+          "obligationRefNo" : "Semrád rounovací zmenšení."
+        },
+        "auditDate" : "29.06.1908",
+        "birthDate" : "28.05.1982",
+        "birthDateString" : "19.08.1986",
+        "birthNumber" : "190419691969",
+        "companyRegNo" : "7522719869",
+        "cuRefNo" : "cuRefNo2369180994",
+        "customerType" : "Business",
+        "identityDocumentID" : "OP2140894001",
+        "segment" : "SEGMENT6557015232",
+        "sfaId" : "7573334453",
+        "taxRegNo" : "5212690108",
+        "companyName" : "COREROBOTICS",
+        "firstName" : "DAN",
+        "lastName" : "DOBIÁŠOVÁ"
+      },
+      "inner_hits" : {
+        "order_9214983733Zlatokopův." : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "customer_request_9214983733Zlatokopův." : {
+          "hits" : {
+            "total" : 1,
+            "max_score" : 11.105643,
+            "hits" : [ {
+              "_index" : "customer_index_rif",
+              "_type" : "customer_request",
+              "_id" : "CUST_REQ_5_499_0",
+              "_score" : 11.105643,
+              "_routing" : "CUST_5_499",
+              "_parent" : "CUST_5_499",
+              "_source" : {
+                "crRefNo" : [ "9214983733Zlatokopův.", "3082144905Rozjednávanější.", "6250968335Dotaný.", "2702329292Kvokání.", "1338992568Otelení." ]
+              },
+              "highlight" : {
+                "crRefNo" : [ "<em>9214983733Zlatokopův</em>." ]
+              }
+            } ]
+          }
+        },
+        "payment_document_9214983733Zlatokopův." : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "product_9214983733Zlatokopův." : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        }
+      }
+    } ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "general":{
+    "gui":"4-3-1",
+    "login_external":"x0503765",
+    "login_internal":"ra123456",
+    "page":"1",
+    "size":"10",
+    "searchStrings": ["9214983733Zlatokopův."],
+    "show_inactive":true
+  },
+  "advanced":{
+    "product":{
+      "class":["something"],
+      "address":["something"],
+      "crossId":["something"],
+      "name":["something"],
+      "productCode":["something"],
+      "status":["active"],
+      "status":["inactive"],
+      "status":["suspend"],
+      "hasSupplementalName":["something"],
+      "hasNotSupplementalName":["something"],
+      "hasActive":["something"],
+      "hasInactive":["something"],
+      "parameterName":["something"],
+      "parameterValue":["something"]
+    }
+  }
+}
