@@ -1,28 +1,233 @@
 {
-  "error" : {
-    "root_cause" : [ {
-      "type" : "query_parsing_exception",
-      "reason" : "Failed to parse",
-      "index" : "customer_index_rif"
-    } ],
-    "type" : "search_phase_execution_exception",
-    "reason" : "all shards failed",
-    "phase" : "query",
-    "grouped" : true,
-    "failed_shards" : [ {
-      "shard" : 0,
-      "index" : "customer_index_rif",
-      "node" : "i-TfI_NjTsyYbyO37ZNtEw",
-      "reason" : {
-        "type" : "query_parsing_exception",
-        "reason" : "Failed to parse",
-        "index" : "customer_index_rif",
-        "caused_by" : {
-          "type" : "json_parse_exception",
-          "reason" : "Unexpected character (']' (code 93)): expected a value\n at [Source: org.elasticsearch.transport.netty.ChannelBufferStreamInput@81e4fde; line: 947, column: 14]"
+  "took" : 45,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 4,
+    "successful" : 4,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 1.5448408,
+    "hits" : [ {
+      "_index" : "customer_index_rif",
+      "_type" : "customer",
+      "_id" : "CUST_2_499",
+      "_score" : 1.5448408,
+      "_source" : {
+        "residentalAddress" : {
+          "buildingNo" : "976231",
+          "city" : "Sázava",
+          "cityDistrict" : "Ponědrážka",
+          "countryCode" : "BS",
+          "crossId" : "beata.bosáková@multilingua.com",
+          "postalCode" : "38862",
+          "street" : "ŠKOLNÍ",
+          "streetNo" : "506984"
+        },
+        "frameContract" : {
+          "obligationRefNo" : "Feferonkový vrchnější usypávání."
+        },
+        "auditDate" : "18.12.1900",
+        "birthDate" : "14.05.1916",
+        "birthDateString" : "12.07.1972",
+        "birthNumber" : "040419201920",
+        "companyRegNo" : "7202504289",
+        "cuRefNo" : "cuRefNo7359872046",
+        "customerType" : "Person",
+        "identityDocumentID" : "OP4929759206",
+        "segment" : "SEGMENT1591083316",
+        "sfaId" : "9119078013",
+        "taxRegNo" : "4149873031",
+        "companyName" : "MULTILINGUA",
+        "firstName" : "BEATA",
+        "lastName" : "BOSÁKOVÁ"
+      },
+      "highlight" : {
+        "companyName" : [ "<em>MULTILINGUA</em>" ],
+        "birthNumber" : [ "<em>040419201920</em>" ]
+      },
+      "inner_hits" : {
+        "customer_request_6581628318" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "product_040419201920" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "product_2808465116" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "payment_document_4560959401Přerodit" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "product_6581628318" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "order_040419201920" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "order_4560959401Přerodit" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "payment_document_040419201920" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "customer_request_040419201920" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "product_MULTILINGUA" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "payment_document_6581628318" : {
+          "hits" : {
+            "total" : 1,
+            "max_score" : 10.1255045,
+            "hits" : [ {
+              "_index" : "customer_index_rif",
+              "_type" : "payment_document",
+              "_id" : "PAY_DOC_2_499_0",
+              "_score" : 10.1255045,
+              "_routing" : "CUST_2_499",
+              "_parent" : "CUST_2_499",
+              "_source" : {
+                "variableSymbol" : [ "6556085311", "6581628318", "8966268258", "5895078249", "4616282637", "1692048970", "7045921746", "5703528278" ]
+              },
+              "highlight" : {
+                "variableSymbol" : [ "<em>6581628318</em>" ]
+              }
+            } ]
+          }
+        },
+        "product_4560959401Přerodit" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "customer_request_4560959401Přerodit" : {
+          "hits" : {
+            "total" : 1,
+            "max_score" : 11.31271,
+            "hits" : [ {
+              "_index" : "customer_index_rif",
+              "_type" : "customer_request",
+              "_id" : "CUST_REQ_2_499_0",
+              "_score" : 11.31271,
+              "_routing" : "CUST_2_499",
+              "_parent" : "CUST_2_499",
+              "_source" : {
+                "crRefNo" : [ "3301010255Dakotský.", "1799168784Výškrab.", "8800201131Defétismus.", "4560959401Přerodit.", "5532975867Raketový." ]
+              },
+              "highlight" : {
+                "crRefNo" : [ "<em>4560959401Přerodit</em>." ]
+              }
+            } ]
+          }
+        },
+        "order_2808465116" : {
+          "hits" : {
+            "total" : 1,
+            "max_score" : 16.655134,
+            "hits" : [ {
+              "_index" : "customer_index_rif",
+              "_type" : "order",
+              "_id" : "ORDER2_499_0",
+              "_score" : 16.655134,
+              "_routing" : "CUST_2_499",
+              "_parent" : "CUST_2_499",
+              "_source" : {
+                "orderRefNo" : [ "2808465116" ]
+              },
+              "highlight" : {
+                "orderRefNo" : [ "<em>2808465116</em>" ]
+              }
+            } ]
+          }
+        },
+        "payment_document_2808465116" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "payment_document_MULTILINGUA" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "order_6581628318" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "customer_request_MULTILINGUA" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "order_MULTILINGUA" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
+        },
+        "customer_request_2808465116" : {
+          "hits" : {
+            "total" : 0,
+            "max_score" : null,
+            "hits" : [ ]
+          }
         }
       }
     } ]
-  },
-  "status" : 400
+  }
 }
