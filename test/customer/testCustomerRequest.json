@@ -1,4 +1,5 @@
 {
+  "size" : "10", "from":"0",
   "query": {
     "bool": {
       "must": [
@@ -808,6 +809,28 @@
           }
         },
         {}
+      ],
+      //filtrovani na opravneni
+      "filter":[
+        {
+          "has_child": {
+            "type": "customer_permission",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "query_string": {
+                      "query": "x0503526",
+                      "fields": [
+                        "login"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
       ]
     }
   },
