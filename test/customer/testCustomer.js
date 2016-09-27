@@ -18,6 +18,7 @@ var elasticUrl = nconf.get('elastic-url') + "/customer_index_rif/customer/_searc
 var customerTemplate = fs.readFileSync('./templates/customerTemplate.hbs', 'utf8');
 var testData = JSON.parse(fs.readFileSync('./test/customer/proxyRequest.json', 'utf8'));
 var query = convert.searchQuery(testData, customerTemplate);
+fs.writeFile("test/customer/testCustomerRequest.json", query, null);
 testCommon.convertToStream(query).pipe(request.post(elasticUrl)).pipe(fs.createWriteStream("test/customer/testCustomerResult.json")) ;
 
 

@@ -8,7 +8,7 @@
             "should": [
               {
                 "query_string": {
-                  "query": "{{searchString}}",
+                  "query": "{{.}}",
                   //zde hledam na customerovi
                   "fields": [
                     "firstName",//jméno zákazníka
@@ -36,7 +36,7 @@
                       "must": [
                         {
                           "query_string": {
-                            "query": "{{searchString}}",
+                            "query": "{{.}}",
                             "fields": [
                               "serviceId",//ID služby/přípojky
                               "imsi",//IMSI
@@ -55,7 +55,7 @@
                     }
                   },
                   "inner_hits": {
-                    "name": "product_{{searchString}}",
+                    "name": "product_{{.}}",
                     "highlight": {
                       "fields": {
                         "*": {
@@ -76,7 +76,7 @@
                       "must": [
                         {
                           "query_string": {
-                            "query": "{{searchString}}",
+                            "query": "{{.}}",
                             "fields": [
                               "crRefNo"//ID PZ
                             ]
@@ -86,7 +86,7 @@
                     }
                   },
                   "inner_hits": {
-                    "name": "customer_request_{{searchString}}",
+                    "name": "customer_request_{{.}}",
                     "highlight": {
                       "fields": {
                         "crRefNo": {
@@ -107,7 +107,7 @@
                       "must": [
                         {
                           "query_string": {
-                            "query": "{{searchString}}",
+                            "query": "{{.}}",
                             "fields": [
                               "orderRefNo"//ID objednávky
                             ]
@@ -117,7 +117,7 @@
                     }
                   },
                   "inner_hits": {
-                    "name": "order_{{searchString}}",
+                    "name": "order_{{.}}",
                     "highlight": {
                       "fields": {
                         "orderRefNo": {
@@ -138,7 +138,7 @@
                       "must": [
                         {
                           "query_string": {
-                            "query": "{{searchString}}",
+                            "query": "{{.}}",
                             "fields": [
                               "variableSymbol"//číslo platebního dokladu
                             ]
@@ -148,7 +148,7 @@
                     }
                   },
                   "inner_hits": {
-                    "name": "payment_document_{{searchString}}",
+                    "name": "payment_document_{{.}}",
                     "highlight": {
                       "fields": {
                         "variableSymbol": {
@@ -200,7 +200,7 @@
               {{#general.searchStrings}}
               {
                 "query_string": {
-                  "query": "{{searchString}}",
+                  "query": "{{.}}",
                   //zde hledam na customerovi
                   "fields": [
                     "firstName",//jméno zákazníka
