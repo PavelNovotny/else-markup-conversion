@@ -1,5 +1,4 @@
-# else-markup-conversion
-Konverze dotazů pomocí templatovacího jazyka, (Mustache). 
+# Konverze dotazů pomocí templatovacího jazyka, (Mustache). 
 
 ## Data pro šablony
 ```
@@ -46,20 +45,20 @@ Konverze dotazů pomocí templatovacího jazyka, (Mustache).
     "show_inactive":true
   }
 ```
-#### gui
+### gui
 Pro účely trackování verze gui, připravené businessem jako podklad.
 http://o2themalx01.azuredev2.cz.o2/build/o2-static/4-3-1-vysledky-vyhledavani.hbs.html
 
-#### login\_external, login\_internal
+### login\_external, login\_internal
 V případě, že je login\_external vyplněný, tak vložit do template sekci pro kontrolu loginu (permission), jinak pustit bez oprávnění - nekontrolovat.
 
-#### (page) from, size
+### (page) from, size
 Pro účely stránkování. Buď přepočítat na from z page, nebo se to změní na from a bude bez přepočtu.
 
-#### searchStrings
+### searchStrings
 Pole hledaných stringů.
 
-#### show\_inactive
+### show\_inactive
 V některých modelech je atribut `status`, který nabývá hodnot `active`, `inactive` a `suspend`.
 
 ## Advanced filtr
