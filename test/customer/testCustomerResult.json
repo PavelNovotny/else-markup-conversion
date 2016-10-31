@@ -1,5 +1,5 @@
 {
-  "took" : 42,
+  "took" : 84,
   "timed_out" : false,
   "_shards" : {
     "total" : 4,
@@ -8,12 +8,12 @@
   },
   "hits" : {
     "total" : 1,
-    "max_score" : 1.5448408,
+    "max_score" : 1.5438067,
     "hits" : [ {
       "_index" : "customer_index_rif",
       "_type" : "customer",
       "_id" : "CUST_2_499",
-      "_score" : 1.5448408,
+      "_score" : 1.5438067,
       "_source" : {
         "residentalAddress" : {
           "buildingNo" : "976231",
@@ -121,12 +121,12 @@
         "payment_document_6581628318" : {
           "hits" : {
             "total" : 1,
-            "max_score" : 10.1255045,
+            "max_score" : 10.119758,
             "hits" : [ {
               "_index" : "customer_index_rif",
               "_type" : "payment_document",
               "_id" : "PAY_DOC_2_499_0",
-              "_score" : 10.1255045,
+              "_score" : 10.119758,
               "_routing" : "CUST_2_499",
               "_parent" : "CUST_2_499",
               "_source" : {
@@ -148,12 +148,12 @@
         "customer_request_4560959401Přerodit" : {
           "hits" : {
             "total" : 1,
-            "max_score" : 11.31271,
+            "max_score" : 11.306411,
             "hits" : [ {
               "_index" : "customer_index_rif",
               "_type" : "customer_request",
               "_id" : "CUST_REQ_2_499_0",
-              "_score" : 11.31271,
+              "_score" : 11.306411,
               "_routing" : "CUST_2_499",
               "_parent" : "CUST_2_499",
               "_source" : {
@@ -168,12 +168,12 @@
         "order_2808465116" : {
           "hits" : {
             "total" : 1,
-            "max_score" : 16.655134,
+            "max_score" : 16.646355,
             "hits" : [ {
               "_index" : "customer_index_rif",
               "_type" : "order",
               "_id" : "ORDER2_499_0",
-              "_score" : 16.655134,
+              "_score" : 16.646355,
               "_routing" : "CUST_2_499",
               "_parent" : "CUST_2_499",
               "_source" : {

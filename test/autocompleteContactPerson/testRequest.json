@@ -1,0 +1,102 @@
+{
+  "size" : "10", "from":"0",
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "should": [
+        {
+        "match_phrase_prefix" : {
+        "firstName" : {
+        "query": "mi",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "lastName" : {
+        "query": "mi",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "email" : {
+        "query": "mi",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber" : {
+        "query": "mi",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber2" : {
+        "query": "mi",
+        "slop":  10
+        }
+        }
+        }
+        ]
+          }
+        },
+        {
+          "bool": {
+            "should": [
+        {
+        "match_phrase_prefix" : {
+        "firstName" : {
+        "query": "fr",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "lastName" : {
+        "query": "fr",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "email" : {
+        "query": "fr",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber" : {
+        "query": "fr",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber2" : {
+        "query": "fr",
+        "slop":  10
+        }
+        }
+        }
+        ]
+          }
+        },
+        {}
+      ]
+    }
+  }
+}

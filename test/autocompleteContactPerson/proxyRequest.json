@@ -1,0 +1,13 @@
+{
+  "general":{
+    "gui":"4-3-1",
+    "login_external":"x0503526",
+    "login_internal":"ra123456",
+    "page":"1",
+    "size":"10",
+    "searchStrings": ["mi","fr"],
+    "show_inactive":true,
+    "searchId" : "autocompleteContactPerson"
+  }
+}
+

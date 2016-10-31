@@ -1,0 +1,174 @@
+{
+  "took" : 33,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 4,
+    "successful" : 4,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 88,
+    "max_score" : 0.5317761,
+    "hits" : [ {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_472_24",
+      "_score" : 0.5317761,
+      "_source" : {
+        "auditDate" : "30.12.1924",
+        "firstName" : "MICHAEL",
+        "lastName" : "FRÝDLOVÁ",
+        "contactId" : "2999865519",
+        "sfaId" : "6655484198",
+        "email" : "michael.frýdlová@sixtysix.me",
+        "phoneNumber" : "716250571",
+        "phoneNumber2" : "432637544",
+        "userId" : "ID1392246275"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_203_2",
+      "_score" : 0.53070545,
+      "_source" : {
+        "auditDate" : "29.11.1958",
+        "firstName" : "MICHAL",
+        "lastName" : "FRANEK",
+        "contactId" : "2112451850",
+        "sfaId" : "9156984871",
+        "email" : "michal.franek@cirpria.gov",
+        "phoneNumber" : "838219629",
+        "phoneNumber2" : "889899756",
+        "userId" : "ID5573517532"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_78_10",
+      "_score" : 0.5187456,
+      "_source" : {
+        "auditDate" : "03.09.1948",
+        "firstName" : "MICHAEL",
+        "lastName" : "FRYČ",
+        "contactId" : "9852802632",
+        "sfaId" : "1976811381",
+        "email" : "michael.fryč@foretrust.name",
+        "phoneNumber" : "465067009",
+        "phoneNumber2" : "258321162",
+        "userId" : "ID6389397721"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_35_2",
+      "_score" : 0.50977683,
+      "_source" : {
+        "auditDate" : "30.12.1939",
+        "firstName" : "MICHAEL",
+        "lastName" : "FRANC",
+        "contactId" : "2098919499",
+        "sfaId" : "4570613314",
+        "email" : "michael.franc@superwire.me",
+        "phoneNumber" : "506846862",
+        "phoneNumber2" : "726538540",
+        "userId" : "ID2754999954"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_379_68",
+      "_score" : 0.50374997,
+      "_source" : {
+        "auditDate" : "26.09.1974",
+        "firstName" : "MICHAELA",
+        "lastName" : "FRÝDOVÁ",
+        "contactId" : "1613524670",
+        "sfaId" : "5922614545",
+        "email" : "michaela.frýdová@playtech.edu",
+        "phoneNumber" : "562272876",
+        "phoneNumber2" : "347827440",
+        "userId" : "ID1960458020"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_349_43",
+      "_score" : 0.500372,
+      "_source" : {
+        "auditDate" : "07.12.1970",
+        "firstName" : "MICHAELA",
+        "lastName" : "FRYČOVÁ",
+        "contactId" : "7701084147",
+        "sfaId" : "2848344083",
+        "email" : "michaela.fryčová@playtech.co",
+        "phoneNumber" : "150013626",
+        "phoneNumber2" : "478754781",
+        "userId" : "ID7246496224"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_224_54",
+      "_score" : 0.4846355,
+      "_source" : {
+        "auditDate" : "14.03.1989",
+        "firstName" : "MICHAEL",
+        "lastName" : "DOSTÁLEK",
+        "contactId" : "9972155961",
+        "sfaId" : "2790511513",
+        "email" : "michael.dostálek@freecast.edu",
+        "phoneNumber" : "498416456",
+        "phoneNumber2" : "660284413",
+        "userId" : "ID4575935137"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_20_31",
+      "_score" : 0.47461092,
+      "_source" : {
+        "auditDate" : "03.03.1918",
+        "firstName" : "MICHAEL",
+        "lastName" : "GAZDÍKOVÁ",
+        "contactId" : "5134625894",
+        "sfaId" : "5305433301",
+        "email" : "michael.gazdíková@freecast.biz",
+        "phoneNumber" : "321159090",
+        "phoneNumber2" : "671978431",
+        "userId" : "ID2480681700"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_11_29",
+      "_score" : 0.46910712,
+      "_source" : {
+        "auditDate" : "03.05.1961",
+        "firstName" : "MIA",
+        "lastName" : "BRANDOVÁ",
+        "contactId" : "2919897172",
+        "sfaId" : "8143890199",
+        "email" : "mia.brandová@freecast.edu",
+        "phoneNumber" : "774723567",
+        "phoneNumber2" : "148791823",
+        "userId" : "ID1971401561"
+      }
+    }, {
+      "_index" : "contact_person_index_rif",
+      "_type" : "contact_person",
+      "_id" : "CONTACT_48_45",
+      "_score" : 0.46551165,
+      "_source" : {
+        "auditDate" : "16.03.1939",
+        "firstName" : "MICHAEL",
+        "lastName" : "BYSTROŇOVÁ",
+        "contactId" : "9791655026",
+        "sfaId" : "4366115018",
+        "email" : "michael.bystroňová@freecast.club",
+        "phoneNumber" : "612299075",
+        "phoneNumber2" : "138808210",
+        "userId" : "ID7121028964"
+      }
+    } ]
+  }
+}

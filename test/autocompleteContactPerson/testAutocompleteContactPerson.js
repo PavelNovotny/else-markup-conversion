@@ -4,5 +4,4 @@
  */
 var testCommon = require("../test-common.js");
 
-testCommon.query("simpleCustomer");
-
+testCommon.query("autocompleteContactPerson");

@@ -1,3 +1,17 @@
 {
-"elastic-url": "http://10.199.160.19:9200"
+"elastic-url": "http://10.199.160.19:9200",
+  "simpleCustomer" : {
+    "queryUrl" : "/customer_index_rif/customer/_search?pretty=true",
+    "template" : "./templates/customerTemplate.hbs",
+    "testData" : "./test/customer/proxyRequest.json",
+    "request" : "test/customer/testCustomerRequest.json",
+    "result" : "test/customer/testCustomerResult.json"
+  },
+  "autocompleteContactPerson" : {
+    "queryUrl" : "/contact_person_index_rif/contact_person/_search?pretty=true",
+    "template" : "./templates/autocompleteContactPersonTemplate.hbs",
+    "testData" : "./test/autocompleteContactPerson/proxyRequest.json",
+    "request" : "test/autocompleteContactPerson/testRequest.json",
+    "result" : "test/autocompleteContactPerson/testResult.json"
+  }
 }

@@ -1,0 +1,58 @@
+{
+  "size" : "{{general.size}}", "from":"{{general.from}}",
+  "query": {
+    "bool": {
+      "must": [
+        {{#general.searchStrings}}
+        {
+          "bool": {
+            "should": [
+        {
+        "match_phrase_prefix" : {
+        "firstName" : {
+        "query": "{{.}}",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "lastName" : {
+        "query": "{{.}}",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "email" : {
+        "query": "{{.}}",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber" : {
+        "query": "{{.}}",
+        "slop":  10
+        }
+        }
+        },
+        {
+        "match_phrase_prefix" : {
+        "phoneNumber2" : {
+        "query": "{{.}}",
+        "slop":  10
+        }
+        }
+        }
+        ]
+          }
+        },
+        {{/general.searchStrings}}
+        {}
+      ]
+    }
+  }
+}

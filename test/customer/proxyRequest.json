@@ -6,7 +6,8 @@
     "page":"1",
     "size":"10",
     "searchStrings": ["040419201920","MULTILINGUA", "6581628318", "4560959401Přerodit","2808465116"],
-    "show_inactive":true
+    "show_inactive":true,
+    "searchId" : "simpleCustomer"
   },
   "advanced":{
     "product":{
